@@ -1,0 +1,455 @@
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
+
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+@SET_MAKE@
+
+SHELL = @SHELL@
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+top_builddir = ../../../../..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+INSTALL_HEADER = $(INSTALL_DATA)
+transform = @program_transform_name@
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+host_alias = @host_alias@
+host_triplet = @host@
+AMTAR = @AMTAR@
+AS = @AS@
+ASFLAGS = @ASFLAGS@
+AWK = @AWK@
+BILLS_CPPWARNINGS = @BILLS_CPPWARNINGS@
+BILLS_CWARNINGS = @BILLS_CWARNINGS@
+CC = @CC@
+CCAS = @CCAS@
+CCASFLAGS = @CCASFLAGS@
+CXX = @CXX@
+DEPDIR = @DEPDIR@
+DLLTOOL = @DLLTOOL@
+ECHO = @ECHO@
+EXEEXT = @EXEEXT@
+GLIB_CFLAGS = @GLIB_CFLAGS@
+GLIB_CONFIG = @GLIB_CONFIG@
+GLIB_LIBS = @GLIB_LIBS@
+GTK_CFLAGS = @GTK_CFLAGS@
+GTK_CONFIG = @GTK_CONFIG@
+GTK_LIBS = @GTK_LIBS@
+INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
+NASM = @NASM@
+NASMFLAGS = @NASMFLAGS@
+OBJC = @OBJC@
+OBJDUMP = @OBJDUMP@
+OBJEXT = @OBJEXT@
+PACKAGE = @PACKAGE@
+PLAYER_PLUGIN_DIR = @PLAYER_PLUGIN_DIR@
+RANLIB = @RANLIB@
+SDL_LIBS = @SDL_LIBS@
+STRIP = @STRIP@
+USENASM = @USENASM@
+VERSION = @VERSION@
+X_CFLAGS = @X_CFLAGS@
+X_EXTRA_LIBS = @X_EXTRA_LIBS@
+X_LIBS = @X_LIBS@
+X_PRE_LIBS = @X_PRE_LIBS@
+am__include = @am__include@
+am__quote = @am__quote@
+install_sh = @install_sh@
+
+noinst_LTLIBRARIES = libcelp.la
+
+libcelp_la_LDFLAGS = -static
+
+libcelp_la_SOURCES = \
+	att_abs_postp.c \
+	att_bwx.c \
+	att_firfilt.c \
+	att_iirfilt.c \
+	att_lsf2pc.c \
+	att_pc2lsf.c \
+	att_testbound.c \
+	celp_bitstream_demux.c \
+	celp_decoder.c \
+	dec_lpc.c \
+	nb_celp_dec.c \
+	nec_abs_exc_generation.c \
+	nec_bws_acb_dec.c \
+	nec_bws_exc_generation.c \
+	nec_bws_gain_dec.c \
+	nec_bws_module.c \
+	nec_bws_mp_dec.c \
+	nec_bws_qlsp_dec.c \
+	nec_bws_qrms_dec.c \
+	nec_enh_gain_dec.c \
+	nec_enh_mp_dec.c \
+	nec_exc_acb_dec.c \
+	nec_exc_gain_dec.c \
+	nec_exc_module.c \
+	nec_exc_mp_config.c \
+	nec_exc_mp_dec.c \
+	nec_qrms_dec.c \
+	pan_lspdec.c \
+	pan_lsp_intp.c \
+	pan_lspqtz2_dd.c \
+	pan_mv_data.c \
+	pan_sort.c \
+	pan_stab.c \
+	phi_fbit.c \
+	phi_gxit.c \
+	phi_lpc.c \
+	phi_lsfr.c \
+	phi_post.c \
+	phi_priv.c \
+	phi_xits.c
+
+
+INCLUDES = -I../include
+AM_CFLAGS = 
+
+AM_CXXFLAGS = 
+subdir = player/lib/audio/celp/dec
+mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+CONFIG_HEADER = $(top_builddir)/config.h
+CONFIG_CLEAN_FILES =
+LTLIBRARIES = $(noinst_LTLIBRARIES)
+
+libcelp_la_LIBADD =
+am_libcelp_la_OBJECTS = att_abs_postp.lo att_bwx.lo att_firfilt.lo \
+	att_iirfilt.lo att_lsf2pc.lo att_pc2lsf.lo att_testbound.lo \
+	celp_bitstream_demux.lo celp_decoder.lo dec_lpc.lo \
+	nb_celp_dec.lo nec_abs_exc_generation.lo nec_bws_acb_dec.lo \
+	nec_bws_exc_generation.lo nec_bws_gain_dec.lo nec_bws_module.lo \
+	nec_bws_mp_dec.lo nec_bws_qlsp_dec.lo nec_bws_qrms_dec.lo \
+	nec_enh_gain_dec.lo nec_enh_mp_dec.lo nec_exc_acb_dec.lo \
+	nec_exc_gain_dec.lo nec_exc_module.lo nec_exc_mp_config.lo \
+	nec_exc_mp_dec.lo nec_qrms_dec.lo pan_lspdec.lo pan_lsp_intp.lo \
+	pan_lspqtz2_dd.lo pan_mv_data.lo pan_sort.lo pan_stab.lo \
+	phi_fbit.lo phi_gxit.lo phi_lpc.lo phi_lsfr.lo phi_post.lo \
+	phi_priv.lo phi_xits.lo
+libcelp_la_OBJECTS = $(am_libcelp_la_OBJECTS)
+
+DEFS = @DEFS@
+DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+CPPFLAGS = @CPPFLAGS@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+@AMDEP_TRUE@DEP_FILES = $(DEPDIR)/att_abs_postp.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/att_bwx.Plo $(DEPDIR)/att_firfilt.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/att_iirfilt.Plo $(DEPDIR)/att_lsf2pc.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/att_pc2lsf.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/att_testbound.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/celp_bitstream_demux.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/celp_decoder.Plo $(DEPDIR)/dec_lpc.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nb_celp_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_abs_exc_generation.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_bws_acb_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_bws_exc_generation.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_bws_gain_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_bws_module.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_bws_mp_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_bws_qlsp_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_bws_qrms_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_enh_gain_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_enh_mp_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_exc_acb_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_exc_gain_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_exc_module.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_exc_mp_config.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_exc_mp_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/nec_qrms_dec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/pan_lsp_intp.Plo $(DEPDIR)/pan_lspdec.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/pan_lspqtz2_dd.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/pan_mv_data.Plo $(DEPDIR)/pan_sort.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/pan_stab.Plo $(DEPDIR)/phi_fbit.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/phi_gxit.Plo $(DEPDIR)/phi_lpc.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/phi_lsfr.Plo $(DEPDIR)/phi_post.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/phi_priv.Plo $(DEPDIR)/phi_xits.Plo
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+CFLAGS = @CFLAGS@
+DIST_SOURCES = $(libcelp_la_SOURCES)
+DIST_COMMON = Makefile.am Makefile.in
+SOURCES = $(libcelp_la_SOURCES)
+
+all: all-am
+
+.SUFFIXES:
+.SUFFIXES: .c .lo .o .obj
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --foreign  player/lib/audio/celp/dec/Makefile
+Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+
+clean-noinstLTLIBRARIES:
+	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
+libcelp.la: $(libcelp_la_OBJECTS) $(libcelp_la_DEPENDENCIES) 
+	$(LINK)  $(libcelp_la_LDFLAGS) $(libcelp_la_OBJECTS) $(libcelp_la_LIBADD) $(LIBS)
+
+mostlyclean-compile:
+	-rm -f *.$(OBJEXT) core *.core
+
+distclean-compile:
+	-rm -f *.tab.c
+
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/att_abs_postp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/att_bwx.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/att_firfilt.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/att_iirfilt.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/att_lsf2pc.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/att_pc2lsf.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/att_testbound.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/celp_bitstream_demux.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/celp_decoder.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/dec_lpc.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nb_celp_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_abs_exc_generation.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_bws_acb_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_bws_exc_generation.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_bws_gain_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_bws_module.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_bws_mp_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_bws_qlsp_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_bws_qrms_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_enh_gain_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_enh_mp_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_exc_acb_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_exc_gain_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_exc_module.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_exc_mp_config.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_exc_mp_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/nec_qrms_dec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/pan_lsp_intp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/pan_lspdec.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/pan_lspqtz2_dd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/pan_mv_data.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/pan_sort.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/pan_stab.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/phi_fbit.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/phi_gxit.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/phi_lpc.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/phi_lsfr.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/phi_post.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/phi_priv.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/phi_xits.Plo@am__quote@
+
+distclean-depend:
+	-rm -rf $(DEPDIR)
+
+.c.o:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(COMPILE) -c `test -f $< || echo '$(srcdir)/'`$<
+
+.c.obj:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(COMPILE) -c `cygpath -w $<`
+
+.c.lo:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(LTCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+CCDEPMODE = @CCDEPMODE@
+uninstall-info-am:
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	mkid -fID $$unique $(LISP)
+
+TAGS:  $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || etags $(ETAGS_ARGS) $$tags  $$unique $(LISP)
+
+GTAGS:
+	here=`CDPATH=: && cd $(top_builddir) && pwd` \
+	  && cd $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) $$here
+
+distclean-tags:
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
+
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+
+top_distdir = ../../../../..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
+	  if test -d $$d/$$file; then \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
+	  fi; \
+	done
+check-am: all-am
+check: check-am
+all-am: Makefile $(LTLIBRARIES)
+
+installdirs:
+
+install: install-am
+install-exec: install-exec-am
+install-data: install-data-am
+uninstall: uninstall-am
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+installcheck: installcheck-am
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
+mostlyclean-generic:
+
+clean-generic:
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+clean: clean-am
+
+clean-am: clean-generic clean-libtool clean-noinstLTLIBRARIES \
+	mostlyclean-am
+
+distclean: distclean-am
+
+distclean-am: clean-am distclean-compile distclean-depend \
+	distclean-generic distclean-libtool distclean-tags
+
+dvi: dvi-am
+
+dvi-am:
+
+info: info-am
+
+info-am:
+
+install-data-am:
+
+install-exec-am:
+
+install-info: install-info-am
+
+install-man:
+
+installcheck-am:
+
+maintainer-clean: maintainer-clean-am
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+
+mostlyclean: mostlyclean-am
+
+mostlyclean-am: mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool
+
+uninstall-am: uninstall-info-am
+
+.PHONY: GTAGS all all-am check check-am clean clean-generic \
+	clean-libtool clean-noinstLTLIBRARIES distclean \
+	distclean-compile distclean-depend distclean-generic \
+	distclean-libtool distclean-tags distdir dvi dvi-am info \
+	info-am install install-am install-data install-data-am \
+	install-exec install-exec-am install-info install-info-am \
+	install-man install-strip installcheck installcheck-am \
+	installdirs maintainer-clean maintainer-clean-generic \
+	mostlyclean mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool tags uninstall uninstall-am \
+	uninstall-info-am
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

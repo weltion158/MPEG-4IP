@@ -1,0 +1,773 @@
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
+
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+@SET_MAKE@
+
+###########################################################################
+# Some rules for building asm files:
+
+SHELL = @SHELL@
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+top_builddir = ../..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+INSTALL_HEADER = $(INSTALL_DATA)
+transform = @program_transform_name@
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+host_alias = @host_alias@
+host_triplet = @host@
+AMTAR = @AMTAR@
+AS = @AS@
+ASFLAGS = @ASFLAGS@
+AWK = @AWK@
+BILLS_CPPWARNINGS = @BILLS_CPPWARNINGS@
+BILLS_CWARNINGS = @BILLS_CWARNINGS@
+CC = @CC@
+CCAS = @CCAS@
+CCASFLAGS = @CCASFLAGS@
+CXX = @CXX@
+DEPDIR = @DEPDIR@
+DLLTOOL = @DLLTOOL@
+ECHO = @ECHO@
+EXEEXT = @EXEEXT@
+GLIB_CFLAGS = @GLIB_CFLAGS@
+GLIB_CONFIG = @GLIB_CONFIG@
+GLIB_LIBS = @GLIB_LIBS@
+GTK_CFLAGS = @GTK_CFLAGS@
+GTK_CONFIG = @GTK_CONFIG@
+GTK_LIBS = @GTK_LIBS@
+INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
+NASM = @NASM@
+NASMFLAGS = @NASMFLAGS@
+OBJC = @OBJC@
+OBJDUMP = @OBJDUMP@
+OBJEXT = @OBJEXT@
+PACKAGE = @PACKAGE@
+PLAYER_PLUGIN_DIR = @PLAYER_PLUGIN_DIR@
+RANLIB = @RANLIB@
+SDL_LIBS = @SDL_LIBS@
+STRIP = @STRIP@
+USENASM = @USENASM@
+VERSION = @VERSION@
+X_CFLAGS = @X_CFLAGS@
+X_EXTRA_LIBS = @X_EXTRA_LIBS@
+X_LIBS = @X_LIBS@
+X_PRE_LIBS = @X_PRE_LIBS@
+am__include = @am__include@
+am__quote = @am__quote@
+install_sh = @install_sh@
+
+STRIP_FPIC = sh $(top_srcdir)/strip_fPIC.sh
+
+SUFFIXES = .asm
+
+
+###########################################################################
+SUBDIRS = codec osx win_client win_common win_gui
+
+noinst_LTLIBRARIES = libmp4playerutils.la libmp4player.la libmp4syncbase.la \
+	libmp4syncsdl.la
+
+
+libmp4player_la_LDFLAGS = -static
+
+@USE_MMX_TRUE@EXTRA_libmp4player_la_SOURCES = frame_doubler_mmx.asm
+@USE_MMX_FALSE@EXTRA_libmp4player_la_SOURCES = frame_doubler.cpp
+
+libmp4playerutils_la_LDFLAGS = -static
+libmp4playerutils_la_SOURCES = \
+	our_bytestream.h \
+	our_bytestream_file.cpp \
+	our_bytestream_file.h \
+	player_util.c \
+	player_util.h
+
+
+libmp4syncbase_la_SOURCES = \
+	audio.cpp \
+	audio.h \
+	video.cpp \
+	video.h 
+
+libmp4syncbase_la_LDFLAGS = -static
+
+libmp4syncsdl_la_SOURCES = \
+	audio_sdl.cpp \
+	audio_sdl.h \
+	video_sdl.cpp \
+	video_sdl.h
+
+libmp4syncsdl_la_LDFLAGS = -static
+
+libmp4player_la_SOURCES = \
+	avi_bytestream.cpp \
+	avi_bytestream.h \
+	avi_file.cpp \
+	avi_file.h \
+	codec_plugin.cpp \
+	codec_plugin.h \
+	codec_plugin_private.h \
+	ip_port.cpp \
+	ip_port.h \
+	media_utils.cpp \
+	media_utils.h \
+	mpeg2t.h \
+	mpeg2t_private.h \
+	mpeg2t_thread.cpp \
+	mpeg2t_thread.h \
+	mpeg2t_thread_ipc.h \
+	mpeg2t_thread_nx.cpp \
+	mpeg2t_thread_nx.h \
+	mpeg3_bytestream.cpp \
+	mpeg3_bytestream.h \
+	mpeg3_file.cpp \
+	mpeg3_file.h \
+	mpeg3_rtp_bytestream.cpp \
+	mpeg3_rtp_bytestream.h \
+	mp4_file.cpp \
+	mp4_file.h \
+	mp4_bytestream.cpp \
+	mp4_bytestream.h \
+	our_config_file.cpp \
+	our_config_file.h \
+	our_msg_queue.h \
+	player_media.cpp \
+	player_media.h \
+	player_media_decode.cpp \
+	player_sdp.c \
+	player_sdp.h \
+	player_session.cpp \
+	player_session.h \
+	playlist.cpp \
+	playlist.h \
+	qtime_bytestream.cpp \
+	qtime_bytestream.h \
+	qtime_file.cpp \
+	qtime_file.h \
+	rfc3119_bytestream.cpp \
+	rfc3119_bytestream.h \
+	rtp_bytestream.cpp \
+	rtp_bytestream.h \
+	sync.cpp 
+
+
+@NO_GLIB_GTK_TRUE@PROG_E1 = 
+@NO_GLIB_GTK_FALSE@PROG_E1 = gmp4player
+
+bin_PROGRAMS = mp4player $(PROG_E1)
+
+check_PROGRAMS = movplayer
+
+mp4player_SOURCES = \
+	main.cpp 
+
+
+gmp4player_SOURCES = \
+	gui_main.cpp \
+	gui_showmsg.c \
+	gui_utils.c \
+	gui_utils.h \
+	gui_xpm.h
+
+
+movplayer_SOURCES = \
+	movplayer.cpp
+
+
+INCLUDES = -I. -I$(top_srcdir)/common/video/mpeg4 -I./codec -I./codec/mpeg4 -I../lib -I../lib/audio -I$(top_srcdir)/lib/SDL/include -I$(top_srcdir)/lib/mp4 -I$(top_srcdir)/lib/mp4v2 -I$(top_srcdir)/include -I$(top_srcdir)/include -I$(top_srcdir)/lib/avi -I$(top_srcdir)/lib -I$(top_srcdir)/common/video/libmpeg32 @GLIB_CFLAGS@ @GTK_CFLAGS@ @X_CFLAGS@
+
+AM_CFLAGS = -D_REENTRANT @BILLS_CWARNINGS@ -DPLAYER_PLUGIN_DIR=\"@PLAYER_PLUGIN_DIR@\"
+
+AM_CXXFLAGS = -D_REENTRANT -DNOCONTROLS -fexceptions @BILLS_CPPWARNINGS@ -DPLAYER_PLUGIN_DIR=\"@PLAYER_PLUGIN_DIR@\"
+
+libmp4player_la_LIBADD = \
+	codec/aa/libaa.la \
+	codec/mp3/libmp3.la \
+	$(top_builddir)/lib/mpeg2t/libmpeg2_transport.la \
+	$(top_builddir)/common/video/libmpeg32/libmpeg3.la \
+	$(top_builddir)/player/lib/audio/mp3util/libmp3utils.la \
+	$(top_builddir)/lib/sdp/libsdp.la \
+	$(top_builddir)/player/lib/mp4util/libmp4util.la \
+	$(top_builddir)/player/lib/libhttp/libhttp.la \
+	$(top_builddir)/lib/config_file/libconfig_file.la \
+	$(top_builddir)/lib/msg_queue/libmsg_queue.la \
+	$(top_builddir)/lib/bitstream/libbitstream.la \
+	$(top_builddir)/lib/mp4av/libmp4av.la \
+	$(top_builddir)/lib/rtp/libuclmmbase.la \
+	$(top_builddir)/player/lib/rtsp/librtsp.la \
+	$(top_builddir)/lib/mp4/libmp4.la \
+	$(top_builddir)/lib/mp4v2/libmp4v2.la \
+	$(top_builddir)/lib/avi/libavi.la \
+	$(top_builddir)/lib/gnu/libmpeg4ip_gnu.la
+
+
+mp4player_LDADD = \
+	-lm \
+	libmp4player.la \
+	libmp4syncbase.la \
+	libmp4syncsdl.la \
+	libmp4syncbase.la \
+	libmp4playerutils.la \
+	@SDL_LIBS@ \
+	$(top_builddir)/lib/SDL/src/main/libSDLmain.a
+
+
+gmp4player_LDADD = $(mp4player_LDADD) \
+	@GTK_LIBS@ @GLIB_LIBS@
+
+
+EXTRA_DIST = \
+	audio_dummy.cpp \
+	audio_dummy.h \
+	libmpplayer60.dsp \
+	mp4player60.dsp \
+	mp4player60.dsw \
+	player60.dsw \
+	wmp4player60.dsp
+
+subdir = player/src
+mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+CONFIG_HEADER = $(top_builddir)/config.h
+CONFIG_CLEAN_FILES =
+LTLIBRARIES = $(noinst_LTLIBRARIES)
+
+libmp4player_la_DEPENDENCIES = codec/aa/libaa.la codec/mp3/libmp3.la \
+	$(top_builddir)/lib/mpeg2t/libmpeg2_transport.la \
+	$(top_builddir)/common/video/libmpeg32/libmpeg3.la \
+	$(top_builddir)/player/lib/audio/mp3util/libmp3utils.la \
+	$(top_builddir)/lib/sdp/libsdp.la \
+	$(top_builddir)/player/lib/mp4util/libmp4util.la \
+	$(top_builddir)/player/lib/libhttp/libhttp.la \
+	$(top_builddir)/lib/config_file/libconfig_file.la \
+	$(top_builddir)/lib/msg_queue/libmsg_queue.la \
+	$(top_builddir)/lib/bitstream/libbitstream.la \
+	$(top_builddir)/lib/mp4av/libmp4av.la \
+	$(top_builddir)/lib/rtp/libuclmmbase.la \
+	$(top_builddir)/player/lib/rtsp/librtsp.la \
+	$(top_builddir)/lib/mp4/libmp4.la \
+	$(top_builddir)/lib/mp4v2/libmp4v2.la \
+	$(top_builddir)/lib/avi/libavi.la \
+	$(top_builddir)/lib/gnu/libmpeg4ip_gnu.la
+am_libmp4player_la_OBJECTS = avi_bytestream.lo avi_file.lo \
+	codec_plugin.lo ip_port.lo media_utils.lo mpeg2t_thread.lo \
+	mpeg2t_thread_nx.lo mpeg3_bytestream.lo mpeg3_file.lo \
+	mpeg3_rtp_bytestream.lo mp4_file.lo mp4_bytestream.lo \
+	our_config_file.lo player_media.lo player_media_decode.lo \
+	player_sdp.lo player_session.lo playlist.lo qtime_bytestream.lo \
+	qtime_file.lo rfc3119_bytestream.lo rtp_bytestream.lo sync.lo
+libmp4player_la_OBJECTS = $(am_libmp4player_la_OBJECTS)
+libmp4playerutils_la_LIBADD =
+am_libmp4playerutils_la_OBJECTS = our_bytestream_file.lo player_util.lo
+libmp4playerutils_la_OBJECTS = $(am_libmp4playerutils_la_OBJECTS)
+libmp4syncbase_la_LIBADD =
+am_libmp4syncbase_la_OBJECTS = audio.lo video.lo
+libmp4syncbase_la_OBJECTS = $(am_libmp4syncbase_la_OBJECTS)
+libmp4syncsdl_la_LIBADD =
+am_libmp4syncsdl_la_OBJECTS = audio_sdl.lo video_sdl.lo
+libmp4syncsdl_la_OBJECTS = $(am_libmp4syncsdl_la_OBJECTS)
+@NO_GLIB_GTK_TRUE@bin_PROGRAMS = mp4player$(EXEEXT)
+@NO_GLIB_GTK_FALSE@bin_PROGRAMS = mp4player$(EXEEXT) gmp4player$(EXEEXT)
+check_PROGRAMS = movplayer$(EXEEXT)
+PROGRAMS = $(bin_PROGRAMS)
+
+am_gmp4player_OBJECTS = gui_main.$(OBJEXT) gui_showmsg.$(OBJEXT) \
+	gui_utils.$(OBJEXT)
+gmp4player_OBJECTS = $(am_gmp4player_OBJECTS)
+gmp4player_DEPENDENCIES = libmp4player.la libmp4syncbase.la \
+	libmp4syncsdl.la libmp4syncbase.la libmp4playerutils.la \
+	$(top_builddir)/lib/SDL/src/main/libSDLmain.a
+gmp4player_LDFLAGS =
+am_movplayer_OBJECTS = movplayer.$(OBJEXT)
+movplayer_OBJECTS = $(am_movplayer_OBJECTS)
+movplayer_LDADD = $(LDADD)
+movplayer_DEPENDENCIES =
+movplayer_LDFLAGS =
+am_mp4player_OBJECTS = main.$(OBJEXT)
+mp4player_OBJECTS = $(am_mp4player_OBJECTS)
+mp4player_DEPENDENCIES = libmp4player.la libmp4syncbase.la \
+	libmp4syncsdl.la libmp4syncbase.la libmp4playerutils.la \
+	$(top_builddir)/lib/SDL/src/main/libSDLmain.a
+mp4player_LDFLAGS =
+
+DEFS = @DEFS@
+DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+CPPFLAGS = @CPPFLAGS@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+@AMDEP_TRUE@DEP_FILES = $(DEPDIR)/audio.Plo $(DEPDIR)/audio_sdl.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/avi_bytestream.Plo $(DEPDIR)/avi_file.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/codec_plugin.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/frame_doubler.Plo $(DEPDIR)/gui_main.Po \
+@AMDEP_TRUE@	$(DEPDIR)/gui_showmsg.Po $(DEPDIR)/gui_utils.Po \
+@AMDEP_TRUE@	$(DEPDIR)/ip_port.Plo $(DEPDIR)/main.Po \
+@AMDEP_TRUE@	$(DEPDIR)/media_utils.Plo $(DEPDIR)/movplayer.Po \
+@AMDEP_TRUE@	$(DEPDIR)/mp4_bytestream.Plo $(DEPDIR)/mp4_file.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mpeg2t_thread.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mpeg2t_thread_nx.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mpeg3_bytestream.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mpeg3_file.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mpeg3_rtp_bytestream.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/our_bytestream_file.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/our_config_file.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/player_media.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/player_media_decode.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/player_sdp.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/player_session.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/player_util.Plo $(DEPDIR)/playlist.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/qtime_bytestream.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/qtime_file.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/rfc3119_bytestream.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/rtp_bytestream.Plo $(DEPDIR)/sync.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/video.Plo $(DEPDIR)/video_sdl.Plo
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+CFLAGS = @CFLAGS@
+CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CXXFLAGS) $(CXXFLAGS)
+CXXLD = $(CXX)
+CXXLINK = $(LIBTOOL) --mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+CXXFLAGS = @CXXFLAGS@
+DIST_SOURCES = $(libmp4player_la_SOURCES) \
+	$(EXTRA_libmp4player_la_SOURCES) \
+	$(libmp4playerutils_la_SOURCES) $(libmp4syncbase_la_SOURCES) \
+	$(libmp4syncsdl_la_SOURCES) $(gmp4player_SOURCES) \
+	$(movplayer_SOURCES) $(mp4player_SOURCES)
+
+RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
+	uninstall-info-recursive all-recursive install-data-recursive \
+	install-exec-recursive installdirs-recursive install-recursive \
+	uninstall-recursive check-recursive installcheck-recursive
+DIST_COMMON = Makefile.am Makefile.in
+DIST_SUBDIRS = $(SUBDIRS)
+SOURCES = $(libmp4player_la_SOURCES) $(EXTRA_libmp4player_la_SOURCES) $(libmp4playerutils_la_SOURCES) $(libmp4syncbase_la_SOURCES) $(libmp4syncsdl_la_SOURCES) $(gmp4player_SOURCES) $(movplayer_SOURCES) $(mp4player_SOURCES)
+
+all: all-recursive
+
+.SUFFIXES:
+.SUFFIXES: .asm .c .cpp .lo .o .obj
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --foreign  player/src/Makefile
+Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+
+clean-noinstLTLIBRARIES:
+	-test -z "$(noinst_LTLIBRARIES)" || rm -f $(noinst_LTLIBRARIES)
+libmp4player.la: $(libmp4player_la_OBJECTS) $(libmp4player_la_DEPENDENCIES) 
+	$(CXXLINK)  $(libmp4player_la_LDFLAGS) $(libmp4player_la_OBJECTS) $(libmp4player_la_LIBADD) $(LIBS)
+libmp4playerutils.la: $(libmp4playerutils_la_OBJECTS) $(libmp4playerutils_la_DEPENDENCIES) 
+	$(CXXLINK)  $(libmp4playerutils_la_LDFLAGS) $(libmp4playerutils_la_OBJECTS) $(libmp4playerutils_la_LIBADD) $(LIBS)
+libmp4syncbase.la: $(libmp4syncbase_la_OBJECTS) $(libmp4syncbase_la_DEPENDENCIES) 
+	$(CXXLINK)  $(libmp4syncbase_la_LDFLAGS) $(libmp4syncbase_la_OBJECTS) $(libmp4syncbase_la_LIBADD) $(LIBS)
+libmp4syncsdl.la: $(libmp4syncsdl_la_OBJECTS) $(libmp4syncsdl_la_DEPENDENCIES) 
+	$(CXXLINK)  $(libmp4syncsdl_la_LDFLAGS) $(libmp4syncsdl_la_OBJECTS) $(libmp4syncsdl_la_LIBADD) $(LIBS)
+install-binPROGRAMS: $(bin_PROGRAMS)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(bindir)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  p1=`echo $$p|sed 's/$(EXEEXT)$$//'`; \
+	  if test -f $$p \
+	     || test -f $$p1 \
+	  ; then \
+	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
+	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f"; \
+	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/$$f; \
+	  else :; fi; \
+	done
+
+uninstall-binPROGRAMS:
+	@$(NORMAL_UNINSTALL)
+	@list='$(bin_PROGRAMS)'; for p in $$list; do \
+	  f=`echo $$p|sed 's/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/'`; \
+	  echo " rm -f $(DESTDIR)$(bindir)/$$f"; \
+	  rm -f $(DESTDIR)$(bindir)/$$f; \
+	done
+
+clean-binPROGRAMS:
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+
+clean-checkPROGRAMS:
+	-test -z "$(check_PROGRAMS)" || rm -f $(check_PROGRAMS)
+gmp4player$(EXEEXT): $(gmp4player_OBJECTS) $(gmp4player_DEPENDENCIES) 
+	@rm -f gmp4player$(EXEEXT)
+	$(CXXLINK) $(gmp4player_LDFLAGS) $(gmp4player_OBJECTS) $(gmp4player_LDADD) $(LIBS)
+movplayer$(EXEEXT): $(movplayer_OBJECTS) $(movplayer_DEPENDENCIES) 
+	@rm -f movplayer$(EXEEXT)
+	$(CXXLINK) $(movplayer_LDFLAGS) $(movplayer_OBJECTS) $(movplayer_LDADD) $(LIBS)
+mp4player$(EXEEXT): $(mp4player_OBJECTS) $(mp4player_DEPENDENCIES) 
+	@rm -f mp4player$(EXEEXT)
+	$(CXXLINK) $(mp4player_LDFLAGS) $(mp4player_OBJECTS) $(mp4player_LDADD) $(LIBS)
+
+mostlyclean-compile:
+	-rm -f *.$(OBJEXT) core *.core
+
+distclean-compile:
+	-rm -f *.tab.c
+
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/audio.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/audio_sdl.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/avi_bytestream.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/avi_file.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/codec_plugin.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/frame_doubler.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/gui_main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/gui_showmsg.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/gui_utils.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ip_port.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/main.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/media_utils.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/movplayer.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4_bytestream.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4_file.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mpeg2t_thread.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mpeg2t_thread_nx.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mpeg3_bytestream.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mpeg3_file.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mpeg3_rtp_bytestream.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/our_bytestream_file.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/our_config_file.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/player_media.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/player_media_decode.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/player_sdp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/player_session.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/player_util.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/playlist.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/qtime_bytestream.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/qtime_file.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/rfc3119_bytestream.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/rtp_bytestream.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/sync.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/video.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/video_sdl.Plo@am__quote@
+
+distclean-depend:
+	-rm -rf $(DEPDIR)
+
+.c.o:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(COMPILE) -c `test -f $< || echo '$(srcdir)/'`$<
+
+.c.obj:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(COMPILE) -c `cygpath -w $<`
+
+.c.lo:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(LTCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+CCDEPMODE = @CCDEPMODE@
+
+.cpp.o:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(CXXCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+
+.cpp.obj:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(CXXCOMPILE) -c -o $@ `cygpath -w $<`
+
+.cpp.lo:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(LTCXXCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+CXXDEPMODE = @CXXDEPMODE@
+uninstall-info-am:
+
+# This directory's subdirectories are mostly independent; you can cd
+# into them and run `make' without going through this Makefile.
+# To change the values of `make' variables: instead of editing Makefiles,
+# (1) if the variable is set in `config.status', edit `config.status'
+#     (which will cause the Makefiles to be regenerated when you run `make');
+# (2) otherwise, pass the desired values on the `make' command line.
+$(RECURSIVE_TARGETS):
+	@set fnord $(MAKEFLAGS); amf=$$2; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+mostlyclean-recursive clean-recursive distclean-recursive \
+maintainer-clean-recursive:
+	@set fnord $(MAKEFLAGS); amf=$$2; \
+	dot_seen=no; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	rev=''; for subdir in $$list; do \
+	  if test "$$subdir" = "."; then :; else \
+	    rev="$$subdir $$rev"; \
+	  fi; \
+	done; \
+	rev="$$rev ."; \
+	target=`echo $@ | sed s/-recursive//`; \
+	for subdir in $$rev; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+	done && test -z "$$fail"
+tags-recursive:
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  test "$$subdir" = . || (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) tags); \
+	done
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	mkid -fID $$unique $(LISP)
+
+TAGS: tags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test -f $$subdir/TAGS && tags="$$tags -i $$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || etags $(ETAGS_ARGS) $$tags  $$unique $(LISP)
+
+GTAGS:
+	here=`CDPATH=: && cd $(top_builddir) && pwd` \
+	  && cd $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) $$here
+
+distclean-tags:
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
+
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+
+top_distdir = ../..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
+	  if test -d $$d/$$file; then \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
+	  fi; \
+	done
+	for subdir in $(SUBDIRS); do \
+	  if test "$$subdir" = .; then :; else \
+	    test -d $(distdir)/$$subdir \
+	    || mkdir $(distdir)/$$subdir \
+	    || exit 1; \
+	    (cd $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$(top_distdir)" \
+	        distdir=../$(distdir)/$$subdir \
+	        distdir) \
+	      || exit 1; \
+	  fi; \
+	done
+check-am: all-am
+	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
+check: check-recursive
+all-am: Makefile $(LTLIBRARIES) $(PROGRAMS)
+installdirs: installdirs-recursive
+installdirs-am:
+	$(mkinstalldirs) $(DESTDIR)$(bindir)
+
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+installcheck: installcheck-recursive
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
+mostlyclean-generic:
+
+clean-generic:
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+clean: clean-recursive
+
+clean-am: clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
+	clean-libtool clean-noinstLTLIBRARIES mostlyclean-am
+
+distclean: distclean-recursive
+
+distclean-am: clean-am distclean-compile distclean-depend \
+	distclean-generic distclean-libtool distclean-tags
+
+dvi: dvi-recursive
+
+dvi-am:
+
+info: info-recursive
+
+info-am:
+
+install-data-am:
+
+install-exec-am: install-binPROGRAMS
+
+install-info: install-info-recursive
+
+install-man:
+
+installcheck-am:
+
+maintainer-clean: maintainer-clean-recursive
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+
+mostlyclean: mostlyclean-recursive
+
+mostlyclean-am: mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool
+
+uninstall-am: uninstall-binPROGRAMS uninstall-info-am
+
+uninstall-info: uninstall-info-recursive
+
+.PHONY: $(RECURSIVE_TARGETS) GTAGS all all-am check check-am clean \
+	clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
+	clean-libtool clean-noinstLTLIBRARIES clean-recursive distclean \
+	distclean-compile distclean-depend distclean-generic \
+	distclean-libtool distclean-recursive distclean-tags distdir \
+	dvi dvi-am dvi-recursive info info-am info-recursive install \
+	install-am install-binPROGRAMS install-data install-data-am \
+	install-data-recursive install-exec install-exec-am \
+	install-exec-recursive install-info install-info-am \
+	install-info-recursive install-man install-recursive \
+	install-strip installcheck installcheck-am installdirs \
+	installdirs-am installdirs-recursive maintainer-clean \
+	maintainer-clean-generic maintainer-clean-recursive mostlyclean \
+	mostlyclean-compile mostlyclean-generic mostlyclean-libtool \
+	mostlyclean-recursive tags tags-recursive uninstall \
+	uninstall-am uninstall-binPROGRAMS uninstall-info-am \
+	uninstall-info-recursive uninstall-recursive
+
+
+.asm.lo:
+	$(LIBTOOL) --mode=compile $(STRIP_FPIC) $(NASM) @NASMFLAGS@ $<
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

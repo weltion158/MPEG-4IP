@@ -1,0 +1,700 @@
+# Makefile.in generated automatically by automake 1.5 from Makefile.am.
+
+# Copyright 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001
+# Free Software Foundation, Inc.
+# This Makefile.in is free software; the Free Software Foundation
+# gives unlimited permission to copy and/or distribute it,
+# with or without modifications, as long as this notice is preserved.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY, to the extent permitted by law; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.
+
+@SET_MAKE@
+
+SHELL = @SHELL@
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+
+bindir = @bindir@
+sbindir = @sbindir@
+libexecdir = @libexecdir@
+datadir = @datadir@
+sysconfdir = @sysconfdir@
+sharedstatedir = @sharedstatedir@
+localstatedir = @localstatedir@
+libdir = @libdir@
+infodir = @infodir@
+mandir = @mandir@
+includedir = @includedir@
+oldincludedir = /usr/include
+pkgdatadir = $(datadir)/@PACKAGE@
+pkglibdir = $(libdir)/@PACKAGE@
+pkgincludedir = $(includedir)/@PACKAGE@
+top_builddir = ../..
+
+ACLOCAL = @ACLOCAL@
+AUTOCONF = @AUTOCONF@
+AUTOMAKE = @AUTOMAKE@
+AUTOHEADER = @AUTOHEADER@
+
+INSTALL = @INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_DATA = @INSTALL_DATA@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+INSTALL_HEADER = $(INSTALL_DATA)
+transform = @program_transform_name@
+NORMAL_INSTALL = :
+PRE_INSTALL = :
+POST_INSTALL = :
+NORMAL_UNINSTALL = :
+PRE_UNINSTALL = :
+POST_UNINSTALL = :
+host_alias = @host_alias@
+host_triplet = @host@
+AMTAR = @AMTAR@
+AS = @AS@
+ASFLAGS = @ASFLAGS@
+AWK = @AWK@
+BILLS_CPPWARNINGS = @BILLS_CPPWARNINGS@
+BILLS_CWARNINGS = @BILLS_CWARNINGS@
+CC = @CC@
+CCAS = @CCAS@
+CCASFLAGS = @CCASFLAGS@
+CXX = @CXX@
+DEPDIR = @DEPDIR@
+DLLTOOL = @DLLTOOL@
+ECHO = @ECHO@
+EXEEXT = @EXEEXT@
+GLIB_CFLAGS = @GLIB_CFLAGS@
+GLIB_CONFIG = @GLIB_CONFIG@
+GLIB_LIBS = @GLIB_LIBS@
+GTK_CFLAGS = @GTK_CFLAGS@
+GTK_CONFIG = @GTK_CONFIG@
+GTK_LIBS = @GTK_LIBS@
+INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+LIBTOOL = @LIBTOOL@
+LN_S = @LN_S@
+NASM = @NASM@
+NASMFLAGS = @NASMFLAGS@
+OBJC = @OBJC@
+OBJDUMP = @OBJDUMP@
+OBJEXT = @OBJEXT@
+PACKAGE = @PACKAGE@
+PLAYER_PLUGIN_DIR = @PLAYER_PLUGIN_DIR@
+RANLIB = @RANLIB@
+SDL_LIBS = @SDL_LIBS@
+STRIP = @STRIP@
+USENASM = @USENASM@
+VERSION = @VERSION@
+X_CFLAGS = @X_CFLAGS@
+X_EXTRA_LIBS = @X_EXTRA_LIBS@
+X_LIBS = @X_LIBS@
+X_PRE_LIBS = @X_PRE_LIBS@
+am__include = @am__include@
+am__quote = @am__quote@
+install_sh = @install_sh@
+
+SUBDIRS = . test util
+
+INCLUDES = -I$(top_srcdir)/include
+
+AM_CXXFLAGS = -Wall 
+
+lib_LTLIBRARIES = libmp4v2.la
+
+libmp4v2_la_SOURCES = \
+	atom_co64.cpp \
+	atom_cprt.cpp \
+	atom_ctts.cpp \
+	atom_dimm.cpp \
+	atom_dinf.cpp \
+	atom_dmax.cpp \
+	atom_dmed.cpp \
+	atom_dref.cpp \
+	atom_drep.cpp \
+	atom_edts.cpp \
+	atom_elst.cpp \
+	atom_esds.cpp \
+	atom_free.cpp \
+	atom_ftyp.cpp \
+	atom_hdlr.cpp \
+	atom_hinf.cpp \
+	atom_hmhd.cpp \
+	atom_hnti.cpp \
+	atom_iods.cpp \
+	atom_maxr.cpp \
+	atom_mdat.cpp \
+	atom_mdhd.cpp \
+	atom_mdia.cpp \
+	atom_mfhd.cpp \
+	atom_minf.cpp \
+	atom_moof.cpp \
+	atom_moov.cpp \
+	atom_mp4a.cpp \
+	atom_mp4s.cpp \
+	atom_mp4v.cpp \
+	atom_mvex.cpp \
+	atom_mvhd.cpp \
+	atom_nmhd.cpp \
+	atom_nump.cpp \
+	atom_payt.cpp \
+	atom_pmax.cpp \
+	atom_root.cpp \
+	atom_rtp.cpp \
+	atom_sdp.cpp \
+	atoms.h \
+	atom_smhd.cpp \
+	atom_snro.cpp \
+	atom_stbl.cpp \
+	atom_stco.cpp \
+	atom_stdp.cpp \
+	atom_stsc.cpp \
+	atom_stsd.cpp \
+	atom_stsh.cpp \
+	atom_stss.cpp \
+	atom_stsz.cpp \
+	atom_stts.cpp \
+	atom_tfhd.cpp \
+	atom_tims.cpp \
+	atom_tkhd.cpp \
+	atom_tmax.cpp \
+	atom_tmin.cpp \
+	atom_tpyl.cpp \
+	atom_traf.cpp \
+	atom_trak.cpp \
+	atom_tref.cpp \
+	atom_treftype.cpp \
+	atom_trex.cpp \
+	atom_trpy.cpp \
+	atom_trun.cpp \
+	atom_tsro.cpp \
+	atom_udta.cpp \
+	atom_url.cpp \
+	atom_urn.cpp \
+	atom_vmhd.cpp \
+	descriptors.cpp \
+	descriptors.h \
+	isma.cpp \
+	mp4array.h \
+	mp4atom.cpp \
+	mp4atom.h \
+	mp4common.h \
+	mp4container.cpp \
+	mp4container.h \
+	mp4.h \
+	mp4.cpp \
+	mp4descriptor.cpp \
+	mp4descriptor.h \
+	mp4file.cpp \
+	mp4file.h \
+	mp4file_io.cpp \
+	mp4info.cpp \
+	mp4property.cpp \
+	mp4property.h \
+	mp4track.cpp \
+	mp4track.h \
+	mp4util.cpp \
+	mp4util.h \
+	ocidescriptors.cpp \
+	ocidescriptors.h \
+	odcommands.cpp \
+	odcommands.h \
+	qosqualifiers.cpp \
+	qosqualifiers.h \
+	rtphint.cpp \
+	rtphint.h 
+
+
+EXTRA_DIST = API_CHANGES \
+	INTERNALS \
+	libmp4v260.dsp \
+	libmp4v2_st60.dsp \
+	TODO
+
+subdir = lib/mp4v2
+mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+CONFIG_HEADER = $(top_builddir)/config.h
+CONFIG_CLEAN_FILES =
+LTLIBRARIES = $(lib_LTLIBRARIES)
+
+libmp4v2_la_LDFLAGS =
+libmp4v2_la_LIBADD =
+am_libmp4v2_la_OBJECTS = atom_co64.lo atom_cprt.lo atom_ctts.lo \
+	atom_dimm.lo atom_dinf.lo atom_dmax.lo atom_dmed.lo \
+	atom_dref.lo atom_drep.lo atom_edts.lo atom_elst.lo \
+	atom_esds.lo atom_free.lo atom_ftyp.lo atom_hdlr.lo \
+	atom_hinf.lo atom_hmhd.lo atom_hnti.lo atom_iods.lo \
+	atom_maxr.lo atom_mdat.lo atom_mdhd.lo atom_mdia.lo \
+	atom_mfhd.lo atom_minf.lo atom_moof.lo atom_moov.lo \
+	atom_mp4a.lo atom_mp4s.lo atom_mp4v.lo atom_mvex.lo \
+	atom_mvhd.lo atom_nmhd.lo atom_nump.lo atom_payt.lo \
+	atom_pmax.lo atom_root.lo atom_rtp.lo atom_sdp.lo atom_smhd.lo \
+	atom_snro.lo atom_stbl.lo atom_stco.lo atom_stdp.lo \
+	atom_stsc.lo atom_stsd.lo atom_stsh.lo atom_stss.lo \
+	atom_stsz.lo atom_stts.lo atom_tfhd.lo atom_tims.lo \
+	atom_tkhd.lo atom_tmax.lo atom_tmin.lo atom_tpyl.lo \
+	atom_traf.lo atom_trak.lo atom_tref.lo atom_treftype.lo \
+	atom_trex.lo atom_trpy.lo atom_trun.lo atom_tsro.lo \
+	atom_udta.lo atom_url.lo atom_urn.lo atom_vmhd.lo \
+	descriptors.lo isma.lo mp4atom.lo mp4container.lo mp4.lo \
+	mp4descriptor.lo mp4file.lo mp4file_io.lo mp4info.lo \
+	mp4property.lo mp4track.lo mp4util.lo ocidescriptors.lo \
+	odcommands.lo qosqualifiers.lo rtphint.lo
+libmp4v2_la_OBJECTS = $(am_libmp4v2_la_OBJECTS)
+
+DEFS = @DEFS@
+DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
+CPPFLAGS = @CPPFLAGS@
+LDFLAGS = @LDFLAGS@
+LIBS = @LIBS@
+depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+@AMDEP_TRUE@DEP_FILES = $(DEPDIR)/atom_co64.Plo $(DEPDIR)/atom_cprt.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_ctts.Plo $(DEPDIR)/atom_dimm.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_dinf.Plo $(DEPDIR)/atom_dmax.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_dmed.Plo $(DEPDIR)/atom_dref.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_drep.Plo $(DEPDIR)/atom_edts.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_elst.Plo $(DEPDIR)/atom_esds.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_free.Plo $(DEPDIR)/atom_ftyp.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_hdlr.Plo $(DEPDIR)/atom_hinf.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_hmhd.Plo $(DEPDIR)/atom_hnti.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_iods.Plo $(DEPDIR)/atom_maxr.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_mdat.Plo $(DEPDIR)/atom_mdhd.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_mdia.Plo $(DEPDIR)/atom_mfhd.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_minf.Plo $(DEPDIR)/atom_moof.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_moov.Plo $(DEPDIR)/atom_mp4a.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_mp4s.Plo $(DEPDIR)/atom_mp4v.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_mvex.Plo $(DEPDIR)/atom_mvhd.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_nmhd.Plo $(DEPDIR)/atom_nump.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_payt.Plo $(DEPDIR)/atom_pmax.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_root.Plo $(DEPDIR)/atom_rtp.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_sdp.Plo $(DEPDIR)/atom_smhd.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_snro.Plo $(DEPDIR)/atom_stbl.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_stco.Plo $(DEPDIR)/atom_stdp.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_stsc.Plo $(DEPDIR)/atom_stsd.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_stsh.Plo $(DEPDIR)/atom_stss.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_stsz.Plo $(DEPDIR)/atom_stts.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_tfhd.Plo $(DEPDIR)/atom_tims.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_tkhd.Plo $(DEPDIR)/atom_tmax.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_tmin.Plo $(DEPDIR)/atom_tpyl.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_traf.Plo $(DEPDIR)/atom_trak.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_tref.Plo $(DEPDIR)/atom_treftype.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_trex.Plo $(DEPDIR)/atom_trpy.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_trun.Plo $(DEPDIR)/atom_tsro.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_udta.Plo $(DEPDIR)/atom_url.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/atom_urn.Plo $(DEPDIR)/atom_vmhd.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/descriptors.Plo $(DEPDIR)/isma.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mp4.Plo $(DEPDIR)/mp4atom.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mp4container.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mp4descriptor.Plo $(DEPDIR)/mp4file.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mp4file_io.Plo $(DEPDIR)/mp4info.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mp4property.Plo $(DEPDIR)/mp4track.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/mp4util.Plo $(DEPDIR)/ocidescriptors.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/odcommands.Plo \
+@AMDEP_TRUE@	$(DEPDIR)/qosqualifiers.Plo $(DEPDIR)/rtphint.Plo
+CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+LTCXXCOMPILE = $(LIBTOOL) --mode=compile $(CXX) $(DEFS) \
+	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+	$(AM_CXXFLAGS) $(CXXFLAGS)
+CXXLD = $(CXX)
+CXXLINK = $(LIBTOOL) --mode=link $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+CXXFLAGS = @CXXFLAGS@
+CFLAGS = @CFLAGS@
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+CCLD = $(CC)
+LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+DIST_SOURCES = $(libmp4v2_la_SOURCES)
+
+RECURSIVE_TARGETS = info-recursive dvi-recursive install-info-recursive \
+	uninstall-info-recursive all-recursive install-data-recursive \
+	install-exec-recursive installdirs-recursive install-recursive \
+	uninstall-recursive check-recursive installcheck-recursive
+DIST_COMMON = Makefile.am Makefile.in TODO
+DIST_SUBDIRS = $(SUBDIRS)
+SOURCES = $(libmp4v2_la_SOURCES)
+
+all: all-recursive
+
+.SUFFIXES:
+.SUFFIXES: .cpp .lo .o .obj
+
+mostlyclean-libtool:
+	-rm -f *.lo
+
+clean-libtool:
+	-rm -rf .libs _libs
+
+distclean-libtool:
+	-rm -f libtool
+$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.in $(ACLOCAL_M4)
+	cd $(top_srcdir) && \
+	  $(AUTOMAKE) --foreign  lib/mp4v2/Makefile
+Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+	cd $(top_builddir) && \
+	  CONFIG_HEADERS= CONFIG_LINKS= \
+	  CONFIG_FILES=$(subdir)/$@ $(SHELL) ./config.status
+install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(libdir)
+	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+	  if test -f $$p; then \
+	    echo " $(LIBTOOL) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$p"; \
+	    $(LIBTOOL) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$p; \
+	  else :; fi; \
+	done
+
+uninstall-libLTLIBRARIES:
+	@$(NORMAL_UNINSTALL)
+	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+	  echo " $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p"; \
+	  $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p; \
+	done
+
+clean-libLTLIBRARIES:
+	-test -z "$(lib_LTLIBRARIES)" || rm -f $(lib_LTLIBRARIES)
+libmp4v2.la: $(libmp4v2_la_OBJECTS) $(libmp4v2_la_DEPENDENCIES) 
+	$(CXXLINK) -rpath $(libdir) $(libmp4v2_la_LDFLAGS) $(libmp4v2_la_OBJECTS) $(libmp4v2_la_LIBADD) $(LIBS)
+
+mostlyclean-compile:
+	-rm -f *.$(OBJEXT) core *.core
+
+distclean-compile:
+	-rm -f *.tab.c
+
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_co64.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_cprt.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_ctts.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_dimm.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_dinf.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_dmax.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_dmed.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_dref.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_drep.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_edts.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_elst.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_esds.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_free.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_ftyp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_hdlr.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_hinf.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_hmhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_hnti.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_iods.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_maxr.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mdat.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mdhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mdia.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mfhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_minf.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_moof.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_moov.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mp4a.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mp4s.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mp4v.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mvex.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_mvhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_nmhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_nump.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_payt.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_pmax.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_root.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_rtp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_sdp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_smhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_snro.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stbl.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stco.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stdp.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stsc.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stsd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stsh.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stss.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stsz.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_stts.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_tfhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_tims.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_tkhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_tmax.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_tmin.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_tpyl.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_traf.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_trak.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_tref.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_treftype.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_trex.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_trpy.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_trun.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_tsro.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_udta.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_url.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_urn.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/atom_vmhd.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/descriptors.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/isma.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4atom.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4container.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4descriptor.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4file.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4file_io.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4info.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4property.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4track.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/mp4util.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/ocidescriptors.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/odcommands.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/qosqualifiers.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/rtphint.Plo@am__quote@
+
+distclean-depend:
+	-rm -rf $(DEPDIR)
+
+.cpp.o:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(CXXCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+
+.cpp.obj:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(CXXCOMPILE) -c -o $@ `cygpath -w $<`
+
+.cpp.lo:
+@AMDEP_TRUE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+@AMDEP_TRUE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
+@AMDEP_TRUE@	$(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+	$(LTCXXCOMPILE) -c -o $@ `test -f $< || echo '$(srcdir)/'`$<
+CXXDEPMODE = @CXXDEPMODE@
+uninstall-info-am:
+
+# This directory's subdirectories are mostly independent; you can cd
+# into them and run `make' without going through this Makefile.
+# To change the values of `make' variables: instead of editing Makefiles,
+# (1) if the variable is set in `config.status', edit `config.status'
+#     (which will cause the Makefiles to be regenerated when you run `make');
+# (2) otherwise, pass the desired values on the `make' command line.
+$(RECURSIVE_TARGETS):
+	@set fnord $(MAKEFLAGS); amf=$$2; \
+	dot_seen=no; \
+	target=`echo $@ | sed s/-recursive//`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    dot_seen=yes; \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+	done; \
+	if test "$$dot_seen" = "no"; then \
+	  $(MAKE) $(AM_MAKEFLAGS) "$$target-am" || exit 1; \
+	fi; test -z "$$fail"
+
+mostlyclean-recursive clean-recursive distclean-recursive \
+maintainer-clean-recursive:
+	@set fnord $(MAKEFLAGS); amf=$$2; \
+	dot_seen=no; \
+	case "$@" in \
+	  distclean-* | maintainer-clean-*) list='$(DIST_SUBDIRS)' ;; \
+	  *) list='$(SUBDIRS)' ;; \
+	esac; \
+	rev=''; for subdir in $$list; do \
+	  if test "$$subdir" = "."; then :; else \
+	    rev="$$subdir $$rev"; \
+	  fi; \
+	done; \
+	rev="$$rev ."; \
+	target=`echo $@ | sed s/-recursive//`; \
+	for subdir in $$rev; do \
+	  echo "Making $$target in $$subdir"; \
+	  if test "$$subdir" = "."; then \
+	    local_target="$$target-am"; \
+	  else \
+	    local_target="$$target"; \
+	  fi; \
+	  (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) $$local_target) \
+	   || case "$$amf" in *=*) exit 1;; *k*) fail=yes;; *) exit 1;; esac; \
+	done && test -z "$$fail"
+tags-recursive:
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  test "$$subdir" = . || (cd $$subdir && $(MAKE) $(AM_MAKEFLAGS) tags); \
+	done
+
+tags: TAGS
+
+ID: $(HEADERS) $(SOURCES) $(LISP) $(TAGS_FILES)
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	mkid -fID $$unique $(LISP)
+
+TAGS: tags-recursive $(HEADERS) $(SOURCES)  $(TAGS_DEPENDENCIES) \
+		$(TAGS_FILES) $(LISP)
+	tags=; \
+	here=`pwd`; \
+	list='$(SUBDIRS)'; for subdir in $$list; do \
+	  if test "$$subdir" = .; then :; else \
+	    test -f $$subdir/TAGS && tags="$$tags -i $$here/$$subdir/TAGS"; \
+	  fi; \
+	done; \
+	list='$(SOURCES) $(HEADERS) $(TAGS_FILES)'; \
+	unique=`for i in $$list; do \
+	    if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+	  done | \
+	  $(AWK) '    { files[$$0] = 1; } \
+	       END { for (i in files) print i; }'`; \
+	test -z "$(ETAGS_ARGS)$$unique$(LISP)$$tags" \
+	  || etags $(ETAGS_ARGS) $$tags  $$unique $(LISP)
+
+GTAGS:
+	here=`CDPATH=: && cd $(top_builddir) && pwd` \
+	  && cd $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) $$here
+
+distclean-tags:
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH
+
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+
+top_distdir = ../..
+distdir = $(top_distdir)/$(PACKAGE)-$(VERSION)
+
+distdir: $(DISTFILES)
+	@for file in $(DISTFILES); do \
+	  if test -f $$file; then d=.; else d=$(srcdir); fi; \
+	  dir=`echo "$$file" | sed -e 's,/[^/]*$$,,'`; \
+	  if test "$$dir" != "$$file" && test "$$dir" != "."; then \
+	    $(mkinstalldirs) "$(distdir)/$$dir"; \
+	  fi; \
+	  if test -d $$d/$$file; then \
+	    cp -pR $$d/$$file $(distdir) \
+	    || exit 1; \
+	  else \
+	    test -f $(distdir)/$$file \
+	    || cp -p $$d/$$file $(distdir)/$$file \
+	    || exit 1; \
+	  fi; \
+	done
+	for subdir in $(SUBDIRS); do \
+	  if test "$$subdir" = .; then :; else \
+	    test -d $(distdir)/$$subdir \
+	    || mkdir $(distdir)/$$subdir \
+	    || exit 1; \
+	    (cd $$subdir && \
+	      $(MAKE) $(AM_MAKEFLAGS) \
+	        top_distdir="$(top_distdir)" \
+	        distdir=../$(distdir)/$$subdir \
+	        distdir) \
+	      || exit 1; \
+	  fi; \
+	done
+check-am: all-am
+check: check-recursive
+all-am: Makefile $(LTLIBRARIES)
+installdirs: installdirs-recursive
+installdirs-am:
+	$(mkinstalldirs) $(DESTDIR)$(libdir)
+
+install: install-recursive
+install-exec: install-exec-recursive
+install-data: install-data-recursive
+uninstall: uninstall-recursive
+
+install-am: all-am
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+installcheck: installcheck-recursive
+install-strip:
+	$(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	  `test -z '$(STRIP)' || \
+	    echo "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'"` install
+mostlyclean-generic:
+
+clean-generic:
+
+distclean-generic:
+	-rm -f Makefile $(CONFIG_CLEAN_FILES) stamp-h stamp-h[0-9]*
+
+maintainer-clean-generic:
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+clean: clean-recursive
+
+clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
+	mostlyclean-am
+
+distclean: distclean-recursive
+
+distclean-am: clean-am distclean-compile distclean-depend \
+	distclean-generic distclean-libtool distclean-tags
+
+dvi: dvi-recursive
+
+dvi-am:
+
+info: info-recursive
+
+info-am:
+
+install-data-am:
+
+install-exec-am: install-libLTLIBRARIES
+
+install-info: install-info-recursive
+
+install-man:
+
+installcheck-am:
+
+maintainer-clean: maintainer-clean-recursive
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+
+mostlyclean: mostlyclean-recursive
+
+mostlyclean-am: mostlyclean-compile mostlyclean-generic \
+	mostlyclean-libtool
+
+uninstall-am: uninstall-info-am uninstall-libLTLIBRARIES
+
+uninstall-info: uninstall-info-recursive
+
+.PHONY: $(RECURSIVE_TARGETS) GTAGS all all-am check check-am clean \
+	clean-generic clean-libLTLIBRARIES clean-libtool \
+	clean-recursive distclean distclean-compile distclean-depend \
+	distclean-generic distclean-libtool distclean-recursive \
+	distclean-tags distdir dvi dvi-am dvi-recursive info info-am \
+	info-recursive install install-am install-data install-data-am \
+	install-data-recursive install-exec install-exec-am \
+	install-exec-recursive install-info install-info-am \
+	install-info-recursive install-libLTLIBRARIES install-man \
+	install-recursive install-strip installcheck installcheck-am \
+	installdirs installdirs-am installdirs-recursive \
+	maintainer-clean maintainer-clean-generic \
+	maintainer-clean-recursive mostlyclean mostlyclean-compile \
+	mostlyclean-generic mostlyclean-libtool mostlyclean-recursive \
+	tags tags-recursive uninstall uninstall-am uninstall-info-am \
+	uninstall-info-recursive uninstall-libLTLIBRARIES \
+	uninstall-recursive
+
+# Tell versions [3.59,3.63) of GNU make to not export all variables.
+# Otherwise a system limit (for SysV at least) may be exceeded.
+.NOEXPORT:

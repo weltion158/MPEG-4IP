@@ -1,0 +1,356 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT()
+AM_CONFIG_HEADER(config.h)
+AC_CONFIG_AUX_DIR(config)
+
+dnl Detect the canonical host and target build environment
+AC_CANONICAL_HOST
+AC_CANONICAL_TARGET
+
+
+AM_INIT_AUTOMAKE(mpeg4ip, 0.9.5)
+
+AC_CONFIG_SUBDIRS(lib/rtp)
+
+dnl Checks for programs.
+AC_CHECK_FILE(lib/SDL/sdl-config,,
+	      AC_MSG_ERROR([Configure for SDL needs to run first - either run bootstrap or run lib/SDL/configure]))
+
+AC_LIBTOOL_DLOPEN
+AM_PROG_LIBTOOL
+AC_PROG_MAKE_SET
+AC_PROG_CC
+OBJC="???"
+AC_SUBST(OBJC)
+AC_PROG_CXX(c++)
+AC_C_INLINE
+AC_C_CONST
+AC_PROG_INSTALL
+AC_PATH_XTRA
+AC_C_BIGENDIAN
+
+AS=gcc
+AC_SUBST(AS)
+ASFLAGS="$ASFLAGS"
+AC_SUBST(ASFLAGS)
+CCAS=gcc
+AC_SUBST(CCAS)
+CCASFLAGS="$ASFLAGS"
+AC_SUBST(CCASFLAGS)
+CFLAGS="$CFLAGS -DMPEG4IP"
+CXXFLAGS="$CXXFLAGS -DMPEG4IP"
+
+dnl Checks for libraries.
+
+AC_CHECK_LIB(sndfile, sf_open_read)
+AC_CHECK_LIB(sndfile, sf_open_read,
+	     [AM_CONDITIONAL(HAVE_LIBSNDFILE, true)],
+	     [AM_CONDITIONAL(HAVE_LIBSNDFILE, false)])
+dnl Checks for header files.
+AC_HEADER_STDC
+AC_CHECK_HEADERS(fcntl.h unistd.h stdint.h inttypes.h getopt.h byteswap.h)
+AC_CHECK_HEADERS(linux/cdrom.h sys/dvdio.h glib.h)
+dnl check for Sun, BSD/OS libraries
+AC_CHECK_LIB(socket, socket)
+AC_CHECK_LIB(gnugetopt, getopt_long)
+dnl Checks for typedefs, structures, and compiler characteristics.
+
+dnl Checks for library functions.
+AC_CHECK_FUNCS(strerror strcasestr poll getopt getopt_long getrusage socketpair strsep inet_ntoa)
+
+dnl MY_CHECK_TYPEDEF_FROM_INCLUDE(typedef, include files, define)
+dnl checks if typedef is in include files.  add define in acconfig.h
+AC_DEFUN(MY_CHECK_TYPEDEF_FROM_INCLUDE,
+[
+   AC_MSG_CHECKING([for $1])
+   AC_TRY_COMPILE([$2],
+	          [$1;],
+                  mpeg4ip_ok=yes, mpeg4ip_ok=no)
+   if test $mpeg4ip_ok = yes; then
+      AC_DEFINE($3)
+      AC_MSG_RESULT([yes])
+   else
+      AC_MSG_RESULT([no])
+   fi
+])
+
+MY_CHECK_TYPEDEF_FROM_INCLUDE([in_port_t temp], 
+	[#include <sys/types.h>
+	 #include <netinet/in.h>], [HAVE_IN_PORT_T])
+MY_CHECK_TYPEDEF_FROM_INCLUDE([socklen_t temp], 
+	[#include <sys/types.h>
+	 #include <sys/socket.h>], HAVE_SOCKLEN_T)
+MY_CHECK_TYPEDEF_FROM_INCLUDE([fpos_t foo; foo.__pos = 0;],
+	[#include <stdio.h>],
+	[HAVE_FPOS_T_POS])
+
+MY_CHECK_TYPEDEF_FROM_INCLUDE([struct addrinfo foo;],
+	[#include <netdb.h>],
+	[HAVE_ST_ADDRINFO])
+
+dnl Allow server build to be disabled
+AC_ARG_ENABLE(server, 
+[  --enable-server        enable server build],
+[ case "${enableval}" in
+  yes) server=true ;;
+  no)  server=false ;;
+  *)   AC_MSG_ERROR(bad value ${enableval} for --enable-server) ;;
+esac],
+[server=true])
+AM_CONDITIONAL(SERVER, test $server = true)
+
+dnl Allow player build to be disabled
+AC_ARG_ENABLE(player, 
+[  --enable-player        enable player build],
+[ case "${enableval}" in
+  yes) player=true ;;
+  no)  player=false ;;
+  *)   AC_MSG_ERROR(bad value ${enableval} for --enable-player) ;;
+esac],
+[player=true])
+AM_CONDITIONAL(PLAYER, test $player = true)
+
+AC_ARG_ENABLE(mp4live,
+[  --enable-mp4live       enable mp4live build on Linux [default=yes]],
+                  , enable_mp4live=yes)
+    if test x$enable_mp4live = xyes; then
+		case "$target" in
+		*-*-linux*)
+			AM_CONDITIONAL(MP4LIVE, true)
+			;;
+		*)
+			AM_CONDITIONAL(MP4LIVE, false)
+			;;
+		esac
+	else
+		AM_CONDITIONAL(MP4LIVE, false)
+    fi
+
+AC_ARG_ENABLE(ipv6,
+[   --enable-ipv6       enable IPv6],
+              enable_ipv6=yes)
+
+    if test x$enable_ipv6 = xyes; then
+       AC_DEFINE(HAVE_IPv6)
+    fi
+
+dnl ### Checking for the existence of files
+dnl MY_CHECK_FILE(FILE, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]])
+
+AC_DEFUN(MY_CHECK_FILE,
+[
+dnl Do the transliteration at runtime so arg 1 can be a shell variable.
+ac_safe=`echo "$1" | sed 'y%./+-%__p_%'`
+AC_MSG_CHECKING([for $1])
+AC_CACHE_VAL(ac_cv_file_$ac_safe,
+  if test -r $1; then
+    eval "ac_cv_file_$ac_safe=yes"
+  else
+    eval "ac_cv_file_$ac_safe=no"
+  fi
+)dnl
+if eval "test \"`echo '$ac_cv_file_'$ac_safe`\" = yes"; then
+  AC_MSG_RESULT(yes)
+  ifelse([$2], , :, [$2])
+else
+  AC_MSG_RESULT(no)
+ifelse([$3], , , [$3])
+fi
+])
+
+dnl read out glib and gtk paths and flags.  Will need to dummy this
+dnl out for a glibless system
+AM_PATH_GLIB()
+if test "$no_glib" != yes; then
+AM_PATH_GTK()
+if test "$no_gtk" = yes; then
+   no_glib_gtk=yes
+else
+   no_glib_gtk=no
+fi
+else 
+   no_glib_gtk=yes
+fi
+
+AM_CONDITIONAL(NO_GLIB_GTK, test x$no_glib_gtk = xyes)
+
+AC_ARG_ENABLE(mmx,
+              [  --enable-mmx           use MMX assembly on x86 [default=yes]],
+              , 
+	      enable_mmx=yes)
+
+if test x$enable_mmx = xyes; then
+   AC_CHECK_PROG(USENASM, nasm, true, false)
+
+   if test x$USENASM = xtrue; then
+	AC_MSG_CHECKING(nasm version...)
+	BILLSNASM_arg=`nasm -r | tr '.' ' '`
+        BILLSNASM_ret=`util/testnasm.sh $BILLSNASM_arg`
+	if test x$BILLSNASM_ret = x"yes"; then
+	   USENASM=true
+	   AC_MSG_RESULT(valid)
+        else
+           USENASM=false
+           AC_MSG_RESULT(invalid)
+	   AC_MSG_WARN(Installed version of NASM is incorrect; please update to 0.98.19 or greater)
+        fi
+   fi
+   if test x$USENASM = xtrue; then
+        AC_PATH_PROG(NASM, nasm)
+        AM_CONDITIONAL(USE_MMX, true)
+	case $target in
+	i?86*)
+		CFLAGS="$CFLAGS -DUSE_MMX"
+		CXXFLAGS="$CXXFLAGS -DUSE_MMX"
+		case $ARCH in
+		win32)
+		  NASMFLAGS="-f win32"
+		  ;;
+		*)
+		  NASMFLAGS="-f elf"
+		  ;;
+		esac
+		AC_SUBST(NASMFLAGS)
+		AM_CONDITIONAL(USE_MMX, true)
+		arch_x86=:
+		AC_DEFINE(ARCH_X86)
+		;;
+	*)
+		AM_CONDITIONAL(USE_MMX, false)
+		;;
+	esac
+    else
+        AM_CONDITIONAL(USE_MMX, false)
+    fi
+else
+    AM_CONDITIONAL(USE_MMX, false)
+fi
+
+dnl Get SDL cflags and SDL libraries to include
+SDL_LIBS="`lib/SDL/sdl-config --libs | sed 's,-L.* -lSDL,\$(top_builddir)/lib/SDL/src/libSDL.la,'`"
+AC_SUBST(SDL_LIBS)
+
+dnl
+BILLS_CWARNINGS="-Wall -Werror -Wmissing-prototypes -Wmissing-declarations -Wno-char-subscripts -Wno-unknown-pragmas"
+BILLS_CPPWARNINGS="-Wall -Werror -Wmissing-prototypes -Wmissing-declarations -Wno-char-subscripts -Woverloaded-virtual -Wno-unknown-pragmas -Wno-deprecated"
+AC_SUBST(BILLS_CWARNINGS)
+AC_SUBST(BILLS_CPPWARNINGS)
+
+PLAYER_PLUGIN_DIR=$libdir/mp4player_plugin
+AC_SUBST(PLAYER_PLUGIN_DIR)
+
+dnl Now output the Makefile's
+AC_OUTPUT( \
+	Makefile \
+	common/video/mpeg4/Makefile \
+	common/video/mpeg4/app/Makefile \
+	common/video/mpeg4/app/convertpar/Makefile \
+	common/video/mpeg4/app/decoder/Makefile \
+	common/video/mpeg4/app/encoder/Makefile \
+	common/video/mpeg4/sys/Makefile \
+	common/video/mpeg4/sys/decoder/Makefile \
+	common/video/mpeg4/sys/encoder/Makefile \
+	common/video/mpeg4/tools/Makefile \
+	common/video/mpeg4/tools/entropy/Makefile \
+	common/video/mpeg4/type/Makefile \
+	common/video/mpeg4/vtc/Makefile \
+	common/video/mpeg4/vtc/include/Makefile \
+	common/video/mpeg4/vtc/main/Makefile \
+	common/video/mpeg4/vtc/pezw/Makefile \
+	common/video/mpeg4/vtc/wavelet/Makefile \
+	common/video/mpeg4/vtc/zte/Makefile \
+	common/video/mpeg4/vtc/ztq/Makefile \
+	doc/Makefile \
+	doc/encoding/Makefile \
+	doc/ietf/Makefile \
+	doc/mcast/Makefile \
+	doc/programs/Makefile \
+	doc/mp4v2/Makefile \
+	include/Makefile \
+	lib/Makefile \
+	lib/avi/Makefile \
+	lib/bitstream/Makefile \
+	lib/config_file/Makefile \
+	lib/fposrec/Makefile \
+	lib/gnu/Makefile \
+	lib/mp4/Makefile \
+	lib/mp4/doc/Makefile \
+	lib/mp4v2/Makefile \
+	lib/mp4v2/test/Makefile \
+	lib/mp4v2/util/Makefile \
+	lib/mp4av/Makefile \
+	lib/mpeg2t/Makefile \
+	lib/msg_queue/Makefile \
+	lib/sdp/Makefile \
+	lib/xvid/Makefile \
+	lib/xvid/dct/Makefile \
+	lib/xvid/dct/x86_asm/Makefile \
+	lib/xvid/bitstream/Makefile \
+	lib/xvid/bitstream/x86_asm/Makefile \
+	lib/xvid/image/Makefile \
+	lib/xvid/image/x86_asm/Makefile \
+	lib/xvid/motion/Makefile \
+	lib/xvid/motion/x86_asm/Makefile \
+	lib/xvid/prediction/Makefile \
+	lib/xvid/quant/Makefile \
+	lib/xvid/quant/x86_asm/Makefile \
+	lib/xvid/utils/Makefile \
+	lib/xvid/utils/x86_asm/Makefile \
+	mpeg4ip.pbproj/Makefile \
+	common/Makefile \
+	common/video/Makefile \
+	common/video/libmpeg32/Makefile \
+	common/video/libmpeg32/video/Makefile \
+	server/Makefile \
+	server/audio/Makefile \
+	server/audio/faac/Makefile \
+	server/video/Makefile \
+	server/video/H26L/Makefile \
+	server/mp4live/Makefile \
+	server/mp4live/gui/Makefile \
+	server/mp4creator/Makefile \
+	server/util/Makefile \
+	server/util/mp4encode/Makefile \
+	server/util/avi2raw/Makefile \
+	server/util/avidump/Makefile \
+	server/util/rgb2yuv/Makefile \
+	server/util/lboxcrop/Makefile \
+	server/util/xvidenc/Makefile \
+	player/Makefile \
+	player/lib/Makefile \
+	player/lib/libhttp/Makefile \
+	player/lib/rtsp/Makefile \
+	player/lib/audio/Makefile \
+	player/lib/audio/celp/Makefile \
+	player/lib/audio/celp/BS/Makefile \
+	player/lib/audio/celp/dec/Makefile \
+	player/lib/audio/celp/include/Makefile \
+	player/lib/audio/faad/Makefile \
+	player/lib/audio/mp3/Makefile \
+	player/lib/audio/mp3util/Makefile \
+	player/lib/mp4util/Makefile \
+	player/plugin/Makefile \
+	player/plugin/audio/Makefile \
+	player/plugin/audio/celp/Makefile \
+	player/plugin/audio/raw/Makefile \
+	player/plugin/video/Makefile \
+	player/plugin/video/mpeg3/Makefile \
+	player/plugin/video/raw/Makefile \
+	player/plugin/video/xvid/Makefile \
+	player/src/Makefile \
+	player/src/codec/Makefile \
+	player/src/codec/aa/Makefile \
+	player/src/codec/mp3/Makefile \
+	player/src/codec/mpeg4/Makefile \
+	player/src/codec/wav/Makefile \
+	player/src/osx/Makefile \
+	player/src/osx/English.lproj/Makefile \
+	player/src/osx/SDLMain.nib/Makefile \
+	player/src/win_client/Makefile \
+	player/src/win_common/Makefile \
+	player/src/win_gui/Makefile \
+	player/src/win_gui/hlp/Makefile \
+	player/src/win_gui/res/Makefile \
+	util/Makefile \
+	util/yuv/Makefile \
+)
